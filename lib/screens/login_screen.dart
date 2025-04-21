@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ourgesapp/screens/home_screen.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -15,8 +17,8 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Connexion')),
       body: Padding(
+        
         padding: const EdgeInsets.all(24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -26,6 +28,15 @@ class _LoginScreenState extends State<LoginScreen> {
               'assets/logo.png',
               height: 100,
             ),
+
+            Text(
+              'Connexion',
+              style: TextStyle(
+                fontSize: 24,
+              ),
+            ),
+            const SizedBox(height: 24),
+
             TextField(
               controller: emailController,
               keyboardType: TextInputType.emailAddress,
@@ -74,7 +85,14 @@ class _LoginScreenState extends State<LoginScreen> {
     final email = emailController.text;
     final password = passwordController.text;
 
-    print('Email: $email');
-    print('Password: $password');
+      print('Email: $email');
+      print('Password: $password');
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const HomeScreen()
+        ),
+      );
   }
 }
