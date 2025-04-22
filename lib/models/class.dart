@@ -1,11 +1,11 @@
 class Class {
   final String className;
-  final String? classId;
+  final String classId;
   final String? classDescription;
 
   Class({
     required this.className,
-    this.classId,
+    required this.classId,
     this.classDescription,
   });
 

@@ -1,17 +1,17 @@
 class Deliverable {
 
-  String? id;
-  String? name;
-  String? description;
-  String? status;
+  String id;
+  String name;
+  String description;
+  String status;
   DateTime? dueDate;
   String? assignedTo;
 
   Deliverable({
-    this.id,
-    this.name,
-    this.description,
-    this.status,
+    required this.id,
+    required this.name,
+    required this.description,
+    required this.status,
     this.dueDate,
     this.assignedTo,
   });

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ourgesapp/models/class.dart';
+import 'package:ourgesapp/screens/project_screen.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -48,20 +49,12 @@ class HomeScreen extends StatelessWidget {
               child: ListTile(
                 title: Text(classes[index].className),
                 subtitle: Text(classes[index].classDescription ?? ''),
-                onTap: () => showDialog(
-                  context: context,
-                  builder: (context) => AlertDialog(
-                    title: Text(classes[index].className),
-                    content: Text(classes[index].classDescription ?? ''),
-                    actions: [
-                      TextButton(
-                        onPressed: () => Navigator.of(context).pop(),
-                        child: const Text('Fermer'),
-                      ),
-                    ],
+                onTap: () => Navigator.push(context, 
+                  MaterialPageRoute(
+                    builder: (context) => ProjectScreen(classId: classes[index].classId),
                   ),
+                ),
               ),
-            )
             );
           },
         ),
