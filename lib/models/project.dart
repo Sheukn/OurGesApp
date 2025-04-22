@@ -1,5 +1,5 @@
-import 'package:ourgesapp/models/deliverable.dart';
-import 'package:ourgesapp/models/report.dart';
+import 'package:ourgesapp/models/group.dart';
+import 'package:ourgesapp/models/projectStep.dart';
 
 class Project{
 
@@ -7,16 +7,17 @@ class Project{
   String name;
   String description;
   String createdAt;
-  List<Deliverable>? deliverables;
-  Report? report;
+  List<Group> groups;
+  List<ProjectStep>? steps;
 
   Project({
     required this.id,
     required this.name,
     required this.description,
     required this.createdAt,
-    this.deliverables,
-    this.report,
+    required this.groups,
+    this.steps,
+    
   });
 
   factory Project.fromJson(Map<String, dynamic> json) {
@@ -25,10 +26,9 @@ class Project{
       name: json['name'],
       description: json['description'],
       createdAt: json['created_at'],
-      deliverables: (json['deliverables'] as List<dynamic>?)
-          ?.map((e) => Deliverable.fromJson(e))
+      groups: (json['groups'] as List<dynamic>)
+          .map((e) => Group.fromJson(e as Map<String, dynamic>))
           .toList(),
-      report: json['report'] != null ? Report.fromJson(json['report']) : null,
     );
   }
 
@@ -38,8 +38,7 @@ class Project{
       'name': name,
       'description': description,
       'created_at': createdAt,
-      'deliverables': deliverables?.map((e) => e.toJson()).toList(),
-      'report': report?.toJson(),
+      'groups': groups.map((e) => e.toJson()).toList(),
     };
   }
 

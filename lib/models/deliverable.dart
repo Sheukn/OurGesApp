@@ -4,16 +4,16 @@ class Deliverable {
   String name;
   String description;
   String status;
-  DateTime? dueDate;
-  String? assignedTo;
+  String dueDate;
+  String stepId;
 
   Deliverable({
     required this.id,
     required this.name,
     required this.description,
     required this.status,
-    this.dueDate,
-    this.assignedTo,
+    required this.dueDate,
+    required this.stepId,
   });
 
   Map<String, dynamic> toJson() {
@@ -22,8 +22,7 @@ class Deliverable {
       'name': name,
       'description': description,
       'status': status,
-      'dueDate': dueDate?.toIso8601String(),
-      'assignedTo': assignedTo,
+      'step_id': stepId,
     };
   }
 
@@ -33,8 +32,7 @@ class Deliverable {
       name: json['name'],
       description: json['description'],
       status: json['status'],
-      dueDate: DateTime.parse(json['dueDate']),
-      assignedTo: json['assignedTo'],
+      stepId: json['step_id'],
     );
   }
 }

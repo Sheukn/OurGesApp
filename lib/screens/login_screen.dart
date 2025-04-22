@@ -82,11 +82,8 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void handleLogin() {
-    final email = emailController.text;
-    final password = passwordController.text;
-
-      print('Email: $email');
-      print('Password: $password');
+    // final email = emailController.text;
+    // final password = passwordController.text;
 
       Navigator.pushReplacement(
         context,
