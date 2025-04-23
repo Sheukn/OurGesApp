@@ -1,16 +1,23 @@
-# ourgesapp
+# OurgesApp 📚🎓
 
-A new Flutter project.
+OurgesApp est une application mobile Flutter destinée aux enseignants pour faciliter la gestion des projets de groupes, la soumission de livrables et la notation des rapports étudiants.
 
-## Getting Started
+## ✨ Fonctionnalités
 
-This project is a starting point for a Flutter application.
+- 🔐 Authentification des enseignants
+- 🏫 Liste des classes disponibles
+- 📂 Visualisation des sujets de projet par classe
+- 👥 Suivi des groupes et de leurs soumissions
+- 📝 Navigation par étapes dans chaque projet
+- 📄 Visualisation des rapports et livrables
+- 🧾 Interface de notation
 
-A few resources to get you started if this is your first Flutter project:
+## 🗺️ Parcours utilisateur
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. **Login**
+2. **Accueil (Liste des classes)**
+3. **Liste des sujets de projets d'une classe**
+4. **Vue par groupe pour un projet sélectionné**
+5. **Navigation entre les étapes du projet**
+6. **Consultation des livrables et du rapport**
+7. **Notation finale**
