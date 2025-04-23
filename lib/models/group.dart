@@ -6,14 +6,14 @@ class Group {
   String id;
   String name;
   List<Student> members;
-  List<Deliverable>? deliverables;
+  List<Deliverable>? submissions;
   Report? report;
   
   Group({
     required this.id,
     required this.name,
     required this.members,
-    this.deliverables,
+    this.submissions,
     this.report,
   });
 
@@ -24,7 +24,7 @@ class Group {
       members: (json['members'] as List<dynamic>)
           .map((e) => Student.fromJson(e as Map<String, dynamic>))
           .toList(),
-      deliverables: (json['deliverables'] as List<dynamic>?)
+      submissions: (json['deliverables'] as List<dynamic>?)
           ?.map((e) => Deliverable.fromJson(e as Map<String, dynamic>))
           .toList(),
       report: json['report'] != null

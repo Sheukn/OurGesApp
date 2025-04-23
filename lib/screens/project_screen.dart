@@ -25,13 +25,14 @@ class ProjectScreen extends StatefulWidget{
         Student(id: 'stu1', name: 'Alice', email: 'alicemail'),
         Student(id: 'stu2', name: 'Bob', email: 'bobemail'),
       ],
-      deliverables: [
+      submissions: [
         Deliverable(
           id: 'del1',
           name: 'Rapport préliminaire',
           description: 'Version initiale du rapport',
           status: 'submitted',
           stepId: 'step1',
+          dueDate: DateTime.parse('2025-05-01'),
         ),
         Deliverable(
           id: 'del2',
@@ -39,8 +40,16 @@ class ProjectScreen extends StatefulWidget{
           description: 'Slides de la présentation',
           status: 'pending',
           stepId: "step2",
+          dueDate: DateTime.parse('2025-05-01'),
         ),
-      ],
+        Deliverable(
+          id: 'del3',
+          name: 'Code source',
+          description: 'Code source de l\'application',
+          status: 'pending',
+          stepId: "step2",
+          dueDate: DateTime.parse('2025-06-01'), 
+      )  ],
       report: Report(
         id: 'rep1',
         title: "Rapport préliminaire",
@@ -55,13 +64,14 @@ class ProjectScreen extends StatefulWidget{
         Student(id: 'stu3', name: 'Charlie', email: 'charliemail'),
         Student(id: 'stu4', name: 'David', email: 'davidemail'),
       ],
-      deliverables: [
+      submissions: [
         Deliverable(
           id: 'del3',
           name: 'Rapport préliminaire',
           description: 'Version initiale du rapport',
           status: 'pending',
           stepId: 'step1',
+          dueDate: DateTime.parse('2025-05-01'),
         ),
       ],
       report: Report(
