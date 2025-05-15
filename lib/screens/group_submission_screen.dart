@@ -3,6 +3,7 @@ import 'package:ourgesapp/models/deliverable.dart';
 import 'package:ourgesapp/models/group.dart';
 import 'package:ourgesapp/models/project.dart';
 import 'package:ourgesapp/widgets/step_widget.dart';
+import 'package:ourgesapp/screens/pdf_reader_screen.dart';
 
 class GroupSubmissionScreen extends StatefulWidget {
   const GroupSubmissionScreen({super.key, required this.project, required this.group});
@@ -21,13 +22,12 @@ class _GroupSubmissionScreenState extends State<GroupSubmissionScreen> {
   @override
   void initState() {
     super.initState();
-    // Initialisation du PageController
     _pageController = PageController();
   }
 
   @override
   void dispose() {
-    _pageController.dispose();  // Libère la mémoire du controller quand le widget est détruit
+    _pageController.dispose(); 
     super.dispose();
   }
 
@@ -105,7 +105,7 @@ class _GroupSubmissionScreenState extends State<GroupSubmissionScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
-                  width: 125, // Set a fixed width for both buttons
+                  width: 125,
                   child: ElevatedButton.icon(
                     onPressed: _currentPage > 0 ? _goToPrevious : null,
                     icon: Icon(Icons.arrow_back),
@@ -126,7 +126,7 @@ class _GroupSubmissionScreenState extends State<GroupSubmissionScreen> {
                   ),
                 ),
                 SizedBox(
-                  width: 125, // Same fixed width as the previous button
+                  width: 125, 
                   child: ElevatedButton.icon(
                     onPressed: _currentPage < steps.length - 1 ? _goToNext : null,
                     icon: Icon(Icons.arrow_forward),
@@ -137,12 +137,19 @@ class _GroupSubmissionScreenState extends State<GroupSubmissionScreen> {
             ),
           ),
           Card(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
+            child: ListTile(
+              title: Text(
                 'Report submission for ${widget.group.name}',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PDFViewerPage(pdfPath: widget.group.report?.description.toString() ?? ''),
+                  ),
+                );
+              },
             ),
           ),
         ],
