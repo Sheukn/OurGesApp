@@ -62,8 +62,15 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
               canShowPaginationDialog: true,
             ),
           if (!_isReady)
-            const Center(
-              child: CircularProgressIndicator(),
+            Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const CircularProgressIndicator(),
+                  const SizedBox(height: 20),
+                  const Text('Loading PDF...'),
+                ],
+              ),
             ),
         ],
       ),
